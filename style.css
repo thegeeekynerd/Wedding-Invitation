@@ -1,0 +1,530 @@
+/* --------------------------------------------------
+    GLOBAL VARIABLES & BASE
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define CSS Variables for easy color adjustments */
+:root {
+    --primary-gold: #a68c53; /* Main Gold */
+    --primary-dark: #846b49; /* Richer Gold for Hover/Accent */
+    --dark-text: #2f2f2f;
+    --light-bg: #fdfaf5;
+    --card-bg-light: #fff7ef;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Make all images responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------------------
+    NAVBAR
+-------------------------------------------------- */
+header {
+    width: 100%;
+    background: var(--card-bg-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-gold);
+}
+
+.nav-links a {
+    margin-left: 24px;
+    color: #4d3b28;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-dark); 
+}
+
+/* Offset for fixed navbar on desktop / tablets */
+section {
+    padding-top: 90px;
+}
+
+/* --------------------------------------------------
+    WEDDING CARD HERO SECTION
+-------------------------------------------------- */
+
+.card-wrapper {
+    max-width: 680px;
+    margin: 3rem auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.card-bg {
+    background-image: url("card-floral.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    width: 100%;
+    height: 880px;
+    opacity: 0.95; 
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Text styles inside card */
+
+.bismillah {
+    letter-spacing: 0.3em; 
+    font-size: 1.05rem;
+    color: #6b5a4b;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.invitation-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary-dark);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+/* HIGH READABILITY FONT FOR NAMES */
+.card-names {
+    font-family: "Playfair Display", serif; 
+    font-size: 3.8rem; /* Large and highly visible on desktop */
+    color: var(--dark-text);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 1px; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08); 
+    margin: 0.5rem 0;
+}
+
+/* & symbol */
+.and-symbol {
+    font-family: "Playfair Display", serif;
+    font-size: 3.2rem;
+    color: var(--primary-gold);
+    margin: 0.8rem 0 0.6rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* parent lines */
+.parent-line {
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: -6px;
+    margin-bottom: 10px;
+    line-height: 1.4rem;
+    font-weight: 500;
+}
+
+.parent-line strong {
+    color: #2b2b2b;
+    font-weight: 700;
+}
+
+/* event details on card */
+.details-block {
+    margin-top: 1rem;
+}
+
+.details-block p {
+    font-size: 1.05rem;
+    margin: 3px 0;
+    color: #3b3b3b;
+    font-weight: 500;
+}
+
+/* --------------------------------------------------
+    BUTTONS
+-------------------------------------------------- */
+.btn {
+    padding: 0.75rem 1.6rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin: 0 6px;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: #cbb07b;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #b3955a;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(179, 149, 90, 0.3);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid #bfa476;
+    color: #bfa476;
+}
+
+.btn-ghost:hover {
+    background: #bfa476;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+    STORY SECTION
+-------------------------------------------------- */
+.section-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #6b5849;
+    margin-bottom: 0.6rem;
+}
+
+.shimmer {
+    background: linear-gradient(120deg, var(--primary-gold), #d4c09d, var(--primary-gold));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer-effect 6s linear infinite;
+    display: inline-block;
+}
+
+@keyframes shimmer-effect {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7a7a7a;
+    margin-bottom: 2rem;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+}
+
+.story-card {
+    background: white;
+    padding: 1.6rem;
+    border-radius: 12px;
+    border: 1px solid #e7dccf;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px); 
+}
+
+.story-card h3 {
+    margin-bottom: 0.5rem;
+    color: #4b3927;
+}
+
+/* --------------------------------------------------
+    EVENTS TIMELINE
+-------------------------------------------------- */
+.timeline {
+    max-width: 700px;
+    margin: auto;
+}
+
+.timeline-item {
+    background: #fff;
+    padding: 1.4rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #efdfd0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    transition: all 0.7s ease; 
+}
+
+.timeline-time {
+    font-size: 1.1rem;
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.timeline-title {
+    font-size: 1.4rem;
+    color: #4d3b28;
+    margin: 3px 0;
+}
+
+.timeline-desc {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.timeline-desc a {
+    color: var(--primary-gold) !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.timeline-desc a:hover {
+    color: var(--primary-dark) !important;
+}
+
+/* --------------------------------------------------
+    LOCATION SECTION
+-------------------------------------------------- */
+.map-card {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.map-card h3 {
+    font-size: 1.4rem;
+    margin: 8px 0;
+    color: #4d3b28;
+}
+
+.map-card p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Map Image Interaction */
+.map-card img {
+    width: 100%;
+    border-radius: 14px;
+    border: 3px solid rgba(166, 140, 83, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-card a:hover img {
+    transform: scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------
+    FOOTER
+-------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: var(--card-bg-light);
+    color: #775c3a;
+    font-size: 1rem;
+    margin-top: 3rem;
+}
+
+/* --------------------------------------------------
+    SCROLL TOP BUTTON
+-------------------------------------------------- */
+.scroll-top {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: #c7a873;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.scroll-top:hover {
+    background: #b18d54;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+    PETALS ANIMATION
+-------------------------------------------------- */
+.petals {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --------------------------------------------------
+    SCROLL REVEAL ANIMATION
+-------------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------
+    RESPONSIVE
+-------------------------------------------------- */
+
+/* Phones & small devices */
+@media (max-width: 768px) {
+
+    /* Header should NOT cover the card on mobile */
+    header {
+        position: static;
+    }
+
+    /* Reduce big padding since header is not fixed now */
+    section {
+        padding-top: 24px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        margin-left: 12px;
+    }
+
+    .card-wrapper {
+        max-width: 520px;
+        margin: 1.5rem auto;
+    }
+
+    .card-bg {
+        height: 720px;
+    }
+
+    .card-content {
+        padding: 2rem 1.2rem;
+    }
+
+    /* Names & headings */
+    .card-names {
+        font-size: 3rem;
+        line-height: 1.05;
+    }
+
+    .and-symbol {
+        font-size: 2.5rem;
+        margin: 0.5rem 0 0.5rem;
+    }
+
+    .bismillah {
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+    }
+
+    .invitation-title {
+        font-size: 1rem;
+    }
+
+    .parent-line,
+    .details-block p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .timeline-item {
+        padding: 1rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    .card-wrapper {
+        max-width: 100%;
+        margin: 1.25rem auto;
+    }
+
+    .card-bg {
+        height: 700px;
+    }
+
+    .card-names {
+        font-size: 2.6rem;
+    }
+
+    .and-symbol {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
